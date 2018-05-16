@@ -29,19 +29,20 @@ class SmmsService extends Service {
   /**
    * 转发upload接口, 上传图片接口
    *
-   * @param {any} params 请求参数
+   * @param {any} stream 请求参数
    * @return {json} response
    * @memberof SmmsService
    */
   async upload(params) {
-    const result = await this.request('/upload', {
-      method: 'post',
-      data: params,
-    });
+    const result = await this.request('/upload', params);
 
-    this.checkSuccess(result);
+    // this.checkSuccess(result);
 
     return result.data;
+
+    // return {
+    //   code:200
+    // }
   }
 
   /**

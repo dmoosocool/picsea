@@ -8,9 +8,12 @@
     "egg-router-plus": "^1.2.0",
     "egg-scripts": "^2.5.0",
     "egg-validate": "^1.0.0",
+    "formstream": "^1.1.0",
     "http-proxy-middleware": "^0.18.0",
     "koa2-connect": "^1.0.2",
-    "path-to-regexp": "^2.2.1"
+    "path-to-regexp": "^2.2.1",
+    "stream-to-array": "^2.3.0",
+    "stream-wormhole": "^1.0.3"
   },
   "devDependencies": {
     "autod": "^3.0.1",
