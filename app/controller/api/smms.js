@@ -17,7 +17,7 @@ class SmmsController extends Controller {
     try {
       const parts = await toArray(stream);
       buf = Buffer.concat(parts);
-    } catch(e) {
+    } catch (e) {
       await sendToWormhole(stream);
       throw e;
     }
@@ -28,10 +28,10 @@ class SmmsController extends Controller {
 
     // 生成formstream.
     const form = new FormStream();
-    
-    // 将参数塞入form中. 
+
+    // 将参数塞入form中.
     form.file('smfile', target);
-    for (var item in stream.fields) {
+    for (const item in stream.fields) {
       form.field(item, stream.fields[item]);
     }
 
@@ -39,7 +39,7 @@ class SmmsController extends Controller {
     ctx.body = await ctx.service.smms.upload({
       method: 'POST',
       headers: form.headers(),
-      stream: form
+      stream: form,
     });
   }
 }
